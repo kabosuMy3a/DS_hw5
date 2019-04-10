@@ -1,7 +1,7 @@
 #ifndef __STACK_H__
 #define __STACK_H__
 
-typedef char * Element ;
+typedef char* Element ;
 
 
 class Stack{
@@ -25,9 +25,7 @@ class Stack{
 		Element Pop();
 		void Print(int top);
 		int getTop();  
-
-
-
+		int getMax();
 
 
 

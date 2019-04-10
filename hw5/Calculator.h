@@ -1,18 +1,29 @@
+#include <string>
+#include "Stack.h"
 #ifndef __CALCULATOR_H__
 #define __CALCULATOR_H__
+
+using namespace std;
+
 class Calculator{
   private:
-    Stack1 stack1; // operator
-    Stack2 stack2; // operand
-    string inflix_exp, postfix_exp;
+    Stack * stackOperator; // operator
+    Stack * stackOperand; // operand
+    string infix_exp, postfix_exp;
+    char ** tokendString ; 
+    int tokenNum ;
+	
   public:
     // Implement the following as member functions
     Calculator();
-    Read(string exp);
-    tokenizer();
-    Convert_infix2postfix();
-    float Evaluate();
-}
+    ~Calculator();
+    void  Read(string exp);
+    void Tokenizer();
+  //  string Convert_infix2postfix();
+  //  float Evaluate();
+    void Print(string opt);
+
+};
 
 
 #endif

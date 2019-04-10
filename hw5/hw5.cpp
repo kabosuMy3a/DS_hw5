@@ -1,21 +1,22 @@
 #include <iostream>
 #include "Stack.h"
-//#include "Calculator.h"
+#include "Calculator.h"
 
 using namespace std;
 
-int main(int argc, char * argv[]){
+int main(){
 
-	Stack * myStack = new Stack();
+	Calculator * myCal = new Calculator() ;
 
-	myStack->Print(myStack->getTop());
-	myStack->Push(argv[1]);
-	myStack->Push(argv[2]);	
-	myStack->Print(myStack->getTop());
-	myStack->Push(argv[3]);
-	myStack->Print(myStack->getTop());
-	cout << "Pop: " << myStack->Pop() << endl;
-		
+	string filename,opt;
+	getline(cin,filename);
+	//cin.ignore(1000,'\n');
+	myCal->Read(filename);
+	getline(cin,opt);; 	
+
+	myCal->Tokenizer();
+	
+	myCal->Print(opt);
 
 
 }

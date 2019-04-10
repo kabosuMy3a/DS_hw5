@@ -90,3 +90,7 @@ int Stack::getTop(){
 
 }
 
+int Stack::getMax(){
+
+	return max_size ;
+}
