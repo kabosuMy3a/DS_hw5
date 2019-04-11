@@ -83,11 +83,17 @@ void Stack::Print(int top){
 }
 
 
-int Stack::getTop(){
+int Stack::getTop() const{
 
 
 	return top ;
 
+}
+
+Element Stack::Retrive(){
+	if (top!= -1)
+		return box[top] ;
+	else return 0x0;
 }
 
 int Stack::getMax(){

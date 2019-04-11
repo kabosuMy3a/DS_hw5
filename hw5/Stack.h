@@ -24,9 +24,10 @@ class Stack{
 		void Push(Element item);
 		Element Pop();
 		void Print(int top);
-		int getTop();  
+		int getTop() const;  
+		Element Retrive();
 		int getMax();
-
+	
 
 
 

@@ -5,10 +5,11 @@
 
 using namespace std;
 
+//"class Stack;
 class Calculator{
   private:
-    Stack * stackOperator; // operator
-    Stack * stackOperand; // operand
+    Stack * stackOperator ; // operator
+   // Stack * stackOperand; // operand
     string infix_exp, postfix_exp;
     char ** tokendString ; 
     int tokenNum ;
@@ -18,9 +19,10 @@ class Calculator{
     Calculator();
     ~Calculator();
     void  Read(string exp);
-    void Tokenizer();
-  //  string Convert_infix2postfix();
-  //  float Evaluate();
+    void Tokenizer(string opt);
+    void Convert_infix2postfix();
+    int checkPriority();  
+    float Evaluate();
     void Print(string opt);
 
 };
