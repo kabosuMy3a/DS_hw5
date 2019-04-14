@@ -12,14 +12,14 @@ int main(){
 	getline(cin,filename);
 	//cin.ignore(1000,'\n');
 	myCal->Read(filename);
-	//getline(cin,opt);; 	
+	getline(cin,opt);; 	
 	
 	//string token_opt;
 	//getline(cin,token_opt);
 	myCal->Tokenizer("infix");
 //	myCal->Print(opt);
 	myCal->Convert_infix2postfix();
-//	myCal->Print("postfix");
+	myCal->Print(opt);
 	float result = myCal->Evaluate();
 	
 	if (result == int(result)) cout << result <<endl;
@@ -28,4 +28,6 @@ int main(){
 		cout.precision(1);
 		cout<<result<<endl;
 	}
+	
+	delete myCal;
 }	

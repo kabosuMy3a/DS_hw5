@@ -154,8 +154,12 @@ void Calculator::Convert_infix2postfix(){
 
 		else if(tempForCtoS.compare(")")==0){
 			
-			while(priorityOfTop !=3){
+			while(priorityOfTop !=3 ){
 				temp = stackOperator->Pop();
+				if (stackOperator->getTop() == -1){
+					 cout << "you input wrong parenthetics set" << endl;
+					 break;
+				}
 				postfix_exp.append(temp);
 				priorityOfTop = checkPriority();
 			
@@ -231,7 +235,9 @@ void Calculator::Convert_infix2postfix(){
 	}
 
 	while (stackOperator->getTop() != -1){
-
+		if (checkPriority()==3){
+			cout << "you input wrong parenthetics set" << endl;
+		} 
 		string temp;
 		temp = stackOperator->Pop();
 		postfix_exp.append(temp);
